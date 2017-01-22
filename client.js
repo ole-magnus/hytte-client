@@ -32,7 +32,7 @@ function startJob() {
 function fireRequest() {
   request(
     { method: 'GET'
-    , uri: url + pathStatus
+    , uri: baseUrl + pathStatus
     }
   , function (error, response, body) {
 
