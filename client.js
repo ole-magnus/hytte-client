@@ -6,12 +6,12 @@ logger.add(logger.transports.File, { filename: 'logfile.log' });
 logger.remove(logger.transports.Console);
 
 
-var baseUrl = "http://192.168.0.11:3000/"
+var baseUrl = "http://138.68.175.78:3000/"
 var pathNorth = "upload/north"
 var pathWest = "upload/west"
 var pathStatus = "status"
 
-var timeInterval = 3600 * 1000;
+var timeInterval = 2700 * 1000;
 var imageName = "lastImage.jpg"
 var cmd0 = 'fswebcam -d /dev/video0 -r 1280x720 --jpeg 90 -D 3 -S 13 ' + imageName;
 var cmd1 = 'fswebcam -d /dev/video1 -r 1280x720 --jpeg 90 -D 3 -S 13 ' + imageName;
