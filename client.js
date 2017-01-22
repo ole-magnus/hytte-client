@@ -6,7 +6,7 @@ logger.add(logger.transports.File, { filename: 'logfile.log' });
 logger.remove(logger.transports.Console);
 
 
-var url = "http://192.168.0.11:3000/"
+var baseUrl = "http://192.168.0.11:3000/"
 var pathNorth = "upload/north"
 var pathWest = "upload/west"
 var pathStatus = "status"
@@ -39,7 +39,7 @@ function fireRequest() {
       if(!error) {
         if(body == "ON") {
           logger.log("info", "Received upload status: ON");
-          snapPicture(cmd0, camera1, url+pathNorth);
+          snapPicture(cmd0, camera1, baseUrl+pathNorth);
         }
       } else {
   logger.log("error", "Error when uploading picture");
@@ -74,7 +74,7 @@ function postImage(imagePath, camera, url) {
     logger.log('info', 'Upload successful!  Server responded with:', body);
     if(camera == camera1) {
         logger.log("info", "Snapping from camera 2");
-      snapPicture(cmd1, camera2, url+pathWest);
+      snapPicture(cmd1, camera2, baseUrl+pathWest);
     }
    });
 
