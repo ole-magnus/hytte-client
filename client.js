@@ -5,7 +5,7 @@ var CronJob = require('cron').CronJob
 
 // Every x minute
 const cronPattern = '0 0/10 * 1/1 * ? *'
-
+var
 var job = new CronJob(cronPattern, function() {
 
   // Do request
@@ -16,8 +16,7 @@ var job = new CronJob(cronPattern, function() {
   // Job stopped
   const date = new Date()
   logger.log("error", "Job stopped: " + date.toString())
-}
-);
+}, true);
 
 logger.add(logger.transports.File, { filename: 'logfile.log' });
 logger.remove(logger.transports.Console);
