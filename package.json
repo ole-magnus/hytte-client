@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.2.1",
     "fs": "0.0.1-security",
     "request": "^2.79.0",
     "winston": "^2.3.1"
